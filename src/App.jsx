@@ -1,14 +1,12 @@
-import { Todo } from "./Project/Todo/Todo";
-import "bootstrap/dist/css/bootstrap.min.css";
-import Map from "./Concepts/Map";
-import Condition_rending from "./Concepts/Condition_rending";
+import Props from "./Concepts/Props";
 
 export default function App() {
+  const names = ["Sami", "Ali", "Ahamad", "Hamid"];
   return (
-    <>
-      {/* <Todo /> */}
-      {/* <Map /> */}
-      <Condition_rending/>
-    </>
+    <ul>
+      {names.map((curr, index) => (
+        <Props key={index} name={curr} />
+      ))}
+    </ul>
   );
 }
