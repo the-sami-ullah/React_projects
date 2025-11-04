@@ -1,0 +1,135 @@
+/* --- Center the entire Todo App --- */
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #74b9ff, #a29bfe);
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+
+/* --- Date below the title --- */
+.todo-date {
+  font-size: 15px;
+  color: #636e72;
+  margin-top: -10px;
+  margin-bottom: 25px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+
+/* --- Main Todo Container --- */
+.todo-container {
+  background: #ffffff;
+  width: 90%;
+  max-width: 500px;
+  padding: 30px 25px;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  text-align: center;
+}
+
+/* --- Header --- */
+header h1 {
+  margin-bottom: 25px;
+  color: #2d3436;
+  font-size: 26px;
+  font-weight: 600;
+}
+
+/* --- Form Section --- */
+.form {
+  margin-bottom: 20px;
+}
+
+.input-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.todo-input {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #dcdde1;
+  border-radius: 8px;
+  outline: none;
+  transition: border 0.3s ease;
+}
+
+.todo-input:focus {
+  border-color: #0984e3;
+  box-shadow: 0 0 4px rgba(9, 132, 227, 0.3);
+}
+
+/* --- Task List Section --- */
+.list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+/* --- Each Task Item --- */
+.todo-item {
+  background: #f5f6fa;
+  padding: 12px 15px;
+  margin: 10px 0;
+  border-radius: 8px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+
+   min-height: 45px; /* ensures height consistency */
+  word-break: break-word; /* break long words */
+  overflow-wrap: anywhere; /* wrap anywhere if necessary */
+}
+
+
+.btn-group {
+  display: flex;
+  flex-direction: row; /* Ensure horizontal layout */
+  gap: 8px;
+  flex-shrink: 0; /* do not shrink */
+  white-space: nowrap; /* keep buttons on one line */
+}
+
+.btn-group .btn {
+  min-width: 60px;
+  text-align: center;
+}
+
+/* --- Done Task Style --- */
+.done {
+  text-decoration: line-through;
+  color: gray;
+  opacity: 0.8;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 600px) {
+  .todo-container {
+    padding: 20px;
+  }
+
+  header h1 {
+    font-size: 22px;
+  }
+
+  .todo-input {
+    font-size: 15px;
+  }
+
+  .btn-group .btn {
+    min-width: 50px;
+    font-size: 14px;
+    padding: 4px 6px;
+  }
+}
