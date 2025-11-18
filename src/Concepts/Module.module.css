@@ -1,0 +1,9 @@
+.paragraph{
+  color: black;
+  border: 2px solid yellow;
+  border-radius: 2px;
+  text-align: center;
+  background-color: aliceblue;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+
+}
