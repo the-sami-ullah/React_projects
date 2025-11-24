@@ -1,12 +1,16 @@
-import Props from "./Concepts/Props";
+// import Props from "./Concepts/Props";
+import { Home } from "./Project/Calculator/Home";
 
 export default function App() {
-  const names = ["Sami", "Ali", "Ahamad", "Hamid"];
+  // const names = ["Sami", "Ali", "Ahamad", "Hamid"];
   return (
-    <ul>
-      {names.map((curr, index) => (
-        <Props key={index} name={curr} />
-      ))}
-    </ul>
+    // <ul>
+    //   {names.map((curr, index) => (
+    //     <Props key={index} name={curr} />
+    //   ))}
+    // </ul>
+    <>
+      <Home />
+    </>
   );
 }
