@@ -2,6 +2,7 @@
 import { Home } from "./Project/Calculator/Home";
 import Formm from "./Concepts/Formm";
 import Main from "./Project/ContextApi/Main";
+import Counter from "./Concepts/UserReducer/Counter";
 
 export default function App() {
   // const names = ["Sami", "Ali", "Ahamad", "Hamid"];
@@ -14,7 +15,8 @@ export default function App() {
     <>
       {/* <Home /> */}
       {/* <Formm /> */}
-      <Main />
+      {/* <Main /> */}
+      <Counter />
     </>
   );
 }
