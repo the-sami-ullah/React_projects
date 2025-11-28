@@ -1,5 +1,6 @@
 // import Props from "./Concepts/Props";
 import { Home } from "./Project/Calculator/Home";
+import Formm from "./Concepts/Formm";
 
 export default function App() {
   // const names = ["Sami", "Ali", "Ahamad", "Hamid"];
@@ -10,7 +11,8 @@ export default function App() {
     //   ))}
     // </ul>
     <>
-      <Home />
+      {/* <Home /> */}
+      <Formm />
     </>
   );
 }
