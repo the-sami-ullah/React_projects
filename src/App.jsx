@@ -13,10 +13,10 @@ import PostList from "./Project/SocialMedia/Components/PostList";
 import { useState } from "react";
 
 export default function App() {
-  const [selTab, setselTab] = useState("Create Post");
+  const [selTab, setselTab] = useState("Home");
   return (
     <div className="app-container">
-      <Siderbar selTab={selTab} setselTab = {setselTab} />
+      <Siderbar selTab={selTab} setselTab={setselTab} />
       <div className="content">
         <Header />
         {selTab === "Home" ? <PostList /> : <CreatPost />}
