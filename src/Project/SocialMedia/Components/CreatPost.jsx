@@ -1,49 +1,86 @@
-import React from "react";
+import React, { useContext, useState } from "react";
+import { PostList } from "./Store/Post-list-store"; // import context
 
-const CreatPost = () => {
+const CreatePost = () => {
+  const { addPost } = useContext(PostList);
+
+  const [title, setTitle] = useState("");
+  const [body, setBody] = useState("");
+  const [tags, setTags] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (!title || !body) {
+      alert("Title and Body are required!");
+      return;
+    }
+
+    const newPost = {
+      id: crypto.randomUUID(), // unique ID
+      title,
+      body,
+      reaction: 0,
+      userId: "user-56", // you can customize
+      tags: tags
+        .split(",")
+        .map((tag) => tag.trim())
+        .filter((tag) => tag.length > 0),
+    };
+
+    addPost(newPost); // add post to context
+
+    // Clear form
+    setTitle("");
+    setBody("");
+    setTags("");
+  };
+
   return (
-    <>
-      <form>
+    <div className="container mt-3">
+      <h4>Create a New Post</h4>
+      <form onSubmit={handleSubmit}>
         <div className="mb-3">
-          <label forname="exampleInputEmail1" className="form-label">
-            Email address
-          </label>
+          <label className="form-label">Post Title</label>
           <input
-            type="email"
+            type="text"
             className="form-control"
-            id="exampleInputEmail1"
-            aria-describedby="emailHelp"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+            placeholder="Enter post title"
+            required
           />
-          <div id="emailHelp" className="form-text">
-            We'll never share your email with anyone else.
-          </div>
         </div>
+
         <div className="mb-3">
-          <label forname="exampleInputPassword1" className="form-label">
-            Password
-          </label>
-          <input
-            type="password"
+          <label className="form-label">Post Body</label>
+          <textarea
             className="form-control"
-            id="exampleInputPassword1"
-          />
+            rows="4"
+            value={body}
+            onChange={(e) => setBody(e.target.value)}
+            placeholder="Write your post content"
+            required
+          ></textarea>
         </div>
-        <div className="mb-3 form-check">
+
+        <div className="mb-3">
+          <label className="form-label">Tags (comma separated)</label>
           <input
-            type="checkbox"
-            className="form-check-input"
-            id="exampleCheck1"
+            type="text"
+            className="form-control"
+            value={tags}
+            onChange={(e) => setTags(e.target.value)}
+            placeholder="e.g., React, JavaScript, UET"
           />
-          <label className="form-check-label" forname="exampleCheck1">
-            Check me out
-          </label>
         </div>
+
         <button type="submit" className="btn btn-primary">
-          Submit
+          Create Post
         </button>
       </form>
-    </>
+    </div>
   );
 };
 
-export default CreatPost;
+export default CreatePost;

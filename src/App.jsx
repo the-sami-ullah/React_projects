@@ -1,8 +1,3 @@
-// import Props from "./Concepts/Props";
-import { Home } from "./Project/Calculator/Home";
-import Formm from "./Concepts/Formm";
-import Main from "./Project/ContextApi/Main";
-import Counter from "./Concepts/UserReducer/Counter";
 import Header from "./Project/SocialMedia/Components/Header";
 import Footer from "./Project/SocialMedia/Components/Footer";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -12,17 +7,22 @@ import CreatPost from "./Project/SocialMedia/Components/CreatPost";
 import PostList from "./Project/SocialMedia/Components/PostList";
 import { useState } from "react";
 
+// Import the provider, NOT the context
+import PostListProvider from "./Project/SocialMedia/Components/Store/Post-list-store";
+
 export default function App() {
   const [selTab, setselTab] = useState("Home");
-  return (
-    <div className="app-container">
-      <Siderbar selTab={selTab} setselTab={setselTab} />
-      <div className="content">
-        <Header />
-        {selTab === "Home" ? <PostList /> : <CreatPost />}
 
-        <Footer />
+  return (
+    <PostListProvider>
+      <div className="app-container">
+        <Siderbar selTab={selTab} setselTab={setselTab} />
+        <div className="content">
+          <Header />
+          {selTab === "Home" ? <PostList /> : <CreatPost />}
+          <Footer />
+        </div>
       </div>
-    </div>
+    </PostListProvider>
   );
 }
