@@ -10,9 +10,12 @@ import Sec_part from "./Concepts/Child_as_Prop/Sec_part.jsx";
 import EventHandling from "./Concepts/EventHandling.jsx";
 // import "bootstrap/dist/css/bootstrap.min.css";
 import { Home } from "./Project/Calculator/Home.jsx";
+import { BrowserRouter } from "react-router-dom";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <App />
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
   </StrictMode>
 );
