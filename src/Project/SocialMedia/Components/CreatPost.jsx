@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { PostList } from "./Store/Post-list-store"; // import context
+import { PostList } from "./Store/Post-list-store";
 
 const CreatePost = () => {
   const { addPost } = useContext(PostList);
@@ -17,18 +17,18 @@ const CreatePost = () => {
     }
 
     const newPost = {
-      id: crypto.randomUUID(), // unique ID
+      id: crypto.randomUUID(),
       title,
       body,
       reaction: 0,
-      userId: "user-56", // you can customize
+      userId: "user-56",
       tags: tags
         .split(",")
         .map((tag) => tag.trim())
         .filter((tag) => tag.length > 0),
     };
 
-    addPost(newPost); // add post to context
+    addPost(newPost);
 
     // Clear form
     setTitle("");
